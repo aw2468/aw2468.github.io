@@ -56,7 +56,7 @@ Anni Wang is a Master of Public Health candidate at Columbia University, special
 - **Phone**: (617) 901-8018
 - **Email**: <a href="mailto:aw3621@cumc.columbia.edu">aw3621@cumc.columbia.edu</a>
 - **LinkedIn**: <a href="https://www.linkedin.com/in/anni-wang-222299291">linkedin.com/in/anni-wang-222299291</a>
-
+- **Github**:<a href="https://github.com/aw2468/aw2468.github.io">github.com/aw2468/aw2468.github.io</a>
 
 You can go [home](index.html)
 
