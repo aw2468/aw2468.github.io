@@ -16,59 +16,73 @@ library(plotly)
 ```
 
 ```{r}
-data("nyc_airbnb")
+data("ny_noaa")
 
-nyc_airbnb = 
-  nyc_airbnb |> 
-  mutate(rating = review_scores_location / 2) |>
-  select(
-    neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) |>
-  filter(
-    !is.na(rating), 
-    neighbourhood_group == "Manhattan",
-    room_type == "Entire home/apt",
-    price %in% 100:500)
+ny_noaa %>% 
+  count(snow) %>%
+  arrange(desc(n))
+
+ny_noaa = 
+  ny_noaa %>% 
+  separate(date, into = c("year", "month", "day"), convert = TRUE) %>% 
+  mutate(
+    tmax = as.numeric(tmax),
+    tmin = as.numeric(tmin))
+
+
 ```
 
 use plotly to make some quick plots.
 
 ```{r}
-nyc_airbnb |>
-  mutate(
-    text_label=
-      str_c("Price:", price, "\nNeighbothood:", neighbourhood))|>
-  plot_ly(
-    x = ~lat, y=~long, color=~price, text=~text_label,
-    type="scatter", mode="markers", alpha=0.5
-  )
+scatter_data <- ny_noaa %>%
+  filter(month == 1) %>%  # Assuming you are looking at January data
+  group_by(id, year) %>%
+  summarize(mean_tmax = mean(tmax, na.rm = TRUE), .groups = 'drop')
+
+# Create the scatter plot
+plot_ly(scatter_data, x = ~year, y = ~mean_tmax, type = 'scatter', mode = 'markers',
+        color = ~mean_tmax, 
+        marker = list(size = 10, opacity = 0.5, line = list(color = 'rgba(255, 255, 255, 0.5)', width = 1)),
+        hoverinfo = 'text',
+        text = ~paste('Year:', year, 'Mean Tmax:', mean_tmax)) %>%
+  layout(title = 'Mean Maximum Temperature for January Across Years for Each Station',
+         xaxis = list(title = 'Year'),
+         yaxis = list(title = 'Mean Maximum Temperature (°C)'))
+
 ```
+
 ```{r}
-nyc_airbnb|>
-  mutate(neighbourhood=fct_reorder(neighbourhood, price))|>
-  plot_ly(
-    x=~neighbourhood, y=~price,color = ~neighbourhood,
-    type="box",colors = "viridis"
-  )
+july_data <- ny_noaa %>%
+  filter(month == 7) %>%
+  group_by(id, year) %>%
+  summarize(mean_tmax = mean(tmax, na.rm = TRUE), .groups = 'drop')
+
+# Create the actual box plot with Plotly
+plot_ly(july_data, y = ~mean_tmax, x = ~as.factor(year),
+        type = "box",
+        hoverinfo = "y+x",
+        boxpoints = "outliers",  # Show only outliers as individual points
+        marker = list(opacity = 0.6)) %>%
+  layout(title = "Box Plot of Mean Maximum Temperature in July",
+         yaxis = list(title = "Mean Maximum Temperature (°C)"),
+         xaxis = list(title = "Year", tickangle = 45))
 ```
+
 ```{r}
-nyc_airbnb|>
-   count(neighbourhood)|>
-  mutate(neighbourhood=fct_reorder(neighbourhood,n))|>
-  plot_ly(x=~neighbourhood, y=~n,
-          type="bar")
-```
-```{r}
-plot_ly(
-  z=volcano, type="heatmap"
-)
-```
-```{r}
-plot_ly(
-  type="choropleth",
-  locations=c("AZ","CA","VT"), locationmode="USA-states",
-  colorscale="Viridis",
-  z=c(10, 20, 40))%>%
-  layout(geo=list(scope="usa"))
+august_data <- ny_noaa %>%
+  filter(month == 8) %>%
+  group_by(id, year) %>%
+  summarize(max_tmax = max(tmax, na.rm = TRUE), .groups = 'drop')
+
+# Create the histogram with Plotly
+plot_ly(august_data, x = ~max_tmax, type = "histogram",
+        marker = list(color = 'rgba(102, 0, 102, 0.6)'),
+        autobinx = FALSE,
+        xbins = list(start = 150, end = 350, size = 10)) %>%
+  layout(title = "Histogram of Maximum Temperatures in August",
+         xaxis = list(title = "Maximum Temperature (°C)"),
+         yaxis = list(title = "Frequency"))
 ```
 
 

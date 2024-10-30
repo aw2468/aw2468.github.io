@@ -6,9 +6,57 @@ output:
     toc_float: true
     theme: cerulean
 ---
-#Information about this website
 
-This website was made as an example in [P8105](https://p8105.com/) for "Making Websites". I am making in RMD and will use Github for hosting.
+## Introduction
+
+Anni Wang is a Master of Public Health candidate at Columbia University, specializing in Epidemiology with a certificate in applied biostatistics. With a background in public health from MCPHS University, Anni has gained diverse experience in epidemiology, data analysis, and health promotion through various internships and research positions.
+
+## Education
+
+- **Columbia University, New York City, NY** (Expected May 2025)
+  - Master of Public Health in Epidemiology
+  - GPA: 3.87/4.00
+  - Relevant Coursework: Health Intervention, Research Methods & Application, Determinants of Health, Health System, Analysis of Categorical Data, Global & Developmental Perspectives
+- **Massachusetts College of Pharmacy and Health Sciences, Boston, MA** (Graduated May 2023)
+  - Bachelor of Science in Public Health
+  - GPA: 3.70/4.00
+  - Relevant Coursework: Healthcare Promotion, Environment and Public Health, Pharmacology, Infectious Disease Epidemiology, Chronic Disease Epidemiology, Data Collection Management, Healthcare Policy, Abnormal Psychology, Research Methods in Health and Behavior, Economics
+
+## Experience
+
+- **New York City Department of Health and Mental Hygiene** (HRTP Intern, June 2024 - Present)
+  - Evaluating diabetes and heart health initiatives in Brooklyn; assisting with data collection and participant engagement.
+- **Center for Disease Control and Prevention, Jiangsu Province** (Epidemiology Intern, May 2022 - Sep 2022; May 2023 - Sep 2023)
+  - Analyzed COVID-19 data and contributed to public health strategies in Nanjing, China.
+- **Nanjing University of Chinese Medicine** (Research Assistant, May 2020 - Aug 2021)
+  - Engaged in applied acupuncture and acupotomy research under Dr. Kaipin Li; contributed to innovative methodologies in traditional medicine practices.
+
+## Leadership
+
+- **Director of Media Department**, Chinese Student Scholar Association at Columbia University (2023 - Present)
+  - Enhanced social media presence and campus engagement through effective digital content management.
+- **ACPO Representative**, Chinese Student Scholar Association at MCPHS University (2020 - 2023)
+  - Led a large student organization through planning and executing numerous community and educational events.
+
+## Volunteering
+
+- **Boston University Alzheimer’s Disease Research Center** (Student Ambassador, Sep 2022 - June 2023)
+  - Educated students on Alzheimer’s Disease and conducted outreach for clinical trial recruitment.
+
+## Skills
+
+- **Languages**: Mandarin (Fluent), English (Fluent), Cantonese (Limited), Spanish (Limited)
+- **Technical Skills**: Microsoft Excel, PowerPoint, Word, SPSS, SAS, R, STATA
+- **Additional Skills**: Yoga Teaching, Dancing, Skiing, Hiking
+
+<p class="special-text">This section highlights additional skills and languages.</p>
+
+## Contact
+
+- **Phone**: (617) 901-8018
+- **Email**: <a href="mailto:aw3621@cumc.columbia.edu">aw3621@cumc.columbia.edu</a>
+- **LinkedIn**: <a href="https://www.linkedin.com/in/anni-wang-222299291">linkedin.com/in/anni-wang-222299291</a>
+
 
 You can go [home](index.html)
 
